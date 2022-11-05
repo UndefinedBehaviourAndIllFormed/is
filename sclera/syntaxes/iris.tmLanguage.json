@@ -1,0 +1,82 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Iris Programming Language",
+	"patterns": [
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#visibility"
+		},
+		{
+			"include": "#identifiers"
+		},
+        {
+            "include": "#operators"
+        },
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"string": {
+			"patterns": [{
+				"name": "string.jade",
+				"begin": "\"",
+				"end": "\""
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "markup.bold & markup.heading",
+				"match": "\\b(main|extern|use|class|function)\\b"
+			}]
+		},
+        "operators": {
+			"patterns": [{
+				"name": "keyword.operator.iris",
+				"match": "[.]|[=]|[;]|[{]|[}]|[(]|[)]"
+			}]
+		},
+		"identifiers": {
+			"patterns": [{
+				"name": "entity.name",
+				"match": "[a-zA-Z0-9_]+"
+			}]
+		},
+		"visibility": {
+			"patterns": [{
+				"name": "markup.italic & markup.heading",
+				"match": "public|private|export|static"
+			},{
+				"name": "markup.heading",
+				"match": "public|private|export"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.iris",
+				"match": "``.*"
+			},
+			{
+				"name":"comment.block.iris",
+				"begin": "`[*]",
+				"end": "[*]`"
+			}
+		]
+		},
+		"numbers":{
+			"patterns": [{
+				"name":"constant.numeric.iris",
+				"match": "\\b([0-9]+)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.iris"
+}

@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Cornea Programming Language",
+	"patterns": [
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+        {
+            "include": "#operators"
+        },
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cornea",
+				"match": "\\b(version|name)\\b"
+			}]
+		},
+		"identifiers":{
+			"patterns": [{
+				"name": "storage.type.java",
+				"begin": "\\w+",
+				"end": "(^[a-zA-Z0-9_]+&[{])"
+			}]
+		},
+        "operators": {
+			"patterns": [{
+				"name": "keyword.operator.cornea",
+				"match": "\\b([.]|[=]|[;]|[{]|[}])\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.cornea",
+				"match": "``.*"
+			},
+			{
+				"name":"comment.block.cornea",
+				"begin": "`[*]",
+				"end": "[*]`"
+			}
+		]
+		},
+		"numbers":{
+			"patterns": [{
+				"name":"constant.numeric.cornea",
+				"match": "\\b([0-9]+)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.cornea"
+}

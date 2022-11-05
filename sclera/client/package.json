@@ -1,0 +1,16 @@
+{
+	"name": "iris-client",
+	"description": "Iris Programming Language Client",
+	"author": "verodev",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.72.0"
+	},
+	"devDependencies": {
+		"@types/node": "^18.11.3",
+		"@types/vscode": "^1.72.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^8.0.2"
+	}
+}

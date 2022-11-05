@@ -1,0 +1,60 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Sclera Programming Language",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.sclera",
+				"match": "\\b(compiler_version|indentation|measurement)\\b"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.sclera",
+				"match": "\\b([.]|[=]|[;])\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.sclera",
+				"match": "``.*"
+			},
+			{
+				"name":"comment.block.sclera",
+				"begin": "`[*]",
+				"end": "[*]`"
+			}
+		]
+		},
+		"numbers":{
+			"patterns": [{
+				"name":"constant.numeric.sclera",
+				"match": "\\b([0-9]+)\\b"
+			}]
+		},
+		"constants":{
+			"patterns": [{
+				"name":"constant.language.sclera",
+				"match": "\\b(nanoseconds|microseconds|milliseconds)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.sclera"
+}

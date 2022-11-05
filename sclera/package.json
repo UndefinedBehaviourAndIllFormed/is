@@ -1,0 +1,83 @@
+{
+  "name": "iris",
+  "displayName": "Iris",
+  "author": "verodev",
+  "description": "Iris Programming Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "sclera",
+        "aliases": [
+          "Sclera Programming Language",
+          "sclera"
+        ],
+        "extensions": [
+          ".sclera"
+        ],
+        "configuration": "./sclera-configuration.json",
+        "icon": {"dark": "./iris-logo.png", "light": "./iris-logo.png"}
+      },
+      {
+        "id": "cornea",
+        "aliases": [
+          "Cornea Programming Language",
+          "cornea"
+        ],
+        "extensions": [
+          ".cornea"
+        ],
+        "configuration": "./cornea-configuration.json",
+        "icon": {"dark": "./iris-logo.png", "light": "./iris-logo.png"}
+      },
+      {
+        "id": "iris",
+        "aliases": [
+          "Iris Programming Language",
+          "iris"
+        ],
+        "extensions": [
+          ".iris"
+        ],
+        "configuration": "./iris-configuration.json",
+        "icon": {"dark": "./iris-logo.png", "light": "./iris-logo.png"}
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sclera",
+        "scopeName": "source.sclera",
+        "path": "./syntaxes/sclera.tmLanguage.json"
+      },
+      {
+        "language": "cornea",
+        "scopeName": "source.cornea",
+        "path": "./syntaxes/cornea.tmLanguage.json"
+      },
+      {
+        "language": "iris",
+        "scopeName": "source.iris",
+        "path": "./syntaxes/iris.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
+    "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+  },
+  "activationEvents": [
+    "onLanguage:sclera",
+    "onLanguage:cornea",
+    "onLanguage:iris"
+  ],
+  "main": "./client/out/extension"
+}
